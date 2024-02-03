@@ -3,3 +3,9 @@ Set-PSReadLineOption -PredictionSource None
 
 # Show top 20 app usage with Name, CPU usage, and ID. Change 20 to desired number.
 Get-Process | Sort-Object CPU -Descending | Select-Object Name,CPU,ID -First 20
+
+# for adding multiple new folders or files easily.
+1..10 | ForEach-Object {New-Item "NewFile$_.txt" -ItemType file  -Value "Hello!"}
+
+# filters all process that have no name
+Get-Process | Where-Object {$_.Name -gt 0}

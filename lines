@@ -1,0 +1,5 @@
+# Cancel prediction typing, Tab completion still enabled:
+Set-PSReadLineOption -PredictionSource None
+
+# Show top 20 app usage with Name, CPU usage, and ID. Change 20 to desired number.
+Get-Process | Sort-Object CPU -Descending | Select-Object Name,CPU,ID -First 20

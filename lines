@@ -9,3 +9,6 @@ Get-Process | Sort-Object CPU -Descending | Select-Object Name,CPU,ID -First 20
 
 # filters all process that have no name
 Get-Process | Where-Object {$_.Name -gt 0}
+
+#on Mac, -Stream parameter doesn't seem to be available. Use | Select * instead
+Get-Content ./Stream.txt | select *

@@ -1,8 +1,9 @@
-# find anything by file format
-Get-ChildItem -Path C:\Users\mike -Recurse -Filter *.specifiedformat
+#May 2024
+  # find anything by file format
+  Get-ChildItem -Path C:\Users\mike -Recurse -Filter *.specifiedformat
 
-# by name
-Get-ChildItem -Path C:\Users\mike -Recurse 'Notes for VM.txt'
+  # by name
+  Get-ChildItem -Path C:\Users\mike -Recurse 'Notes for VM.txt'
 
 # Cancel prediction typing, Tab completion still enabled:
 Set-PSReadLineOption -PredictionSource None

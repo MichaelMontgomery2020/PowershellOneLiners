@@ -1,21 +1,24 @@
 #May 2024
-  # find anything by file format
-  Get-ChildItem -Path C:\Users\mike -Recurse -Filter *.specifiedformat
+# check battery life
+powercfg /batteryreport /output "C:\battery-report.html"
 
-  # by name
-  Get-ChildItem -Path C:\Users\mike -Recurse 'Notes for VM.txt'
+# find anything by file format
+Get-ChildItem -Path C:\Users\mike -Recurse -Filter *.specifiedformat
+
+# by name
+Get-ChildItem -Path C:\Users\mike -Recurse 'Notes for VM.txt'
 
 # Cancel prediction typing, Tab completion still enabled:
 Set-PSReadLineOption -PredictionSource None
 
 # Show top 20 app usage with Name, CPU usage, and ID. Change 20 to desired number.
-Get-Process | Sort-Object CPU -Descending | Select-Object Name,CPU,ID -First 20
+Get-Process | Sort-Object CPU -Descending | Select-Object Name, CPU, ID -First 20
 
 # for adding multiple new folders or files easily.
-1..10 | ForEach-Object {New-Item "NewFile$_.txt" -ItemType file  -Value "Hello!"}
+1..10 | ForEach-Object { New-Item "NewFile$_.txt" -ItemType file  -Value "Hello!" }
 
 # filters all process that have no name
-Get-Process | Where-Object {$_.Name -gt 0}
+Get-Process | Where-Object { $_.Name -gt 0 }
 
 #on Mac, -Stream parameter isn't available. Closest thing to it I've found is Select *. 
 Get-Content ./Stream.txt | select *
